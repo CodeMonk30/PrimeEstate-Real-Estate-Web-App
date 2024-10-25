@@ -1,0 +1,83 @@
+@import '../../responsive.scss';
+
+.homePage{
+    display: flex;
+    height:100%;
+    .textContainer{
+        flex: 3;
+
+        
+        .wrapper{
+            padding-right: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 50px;
+            height: 100%;
+
+            @include md{ //as pic in not visible in md we dont require padding on right of wrapper
+                padding: 0;
+            }
+
+            @include sm{
+                justify-content: flex-start;
+            }
+            .title{
+                font-size: 52px;
+                @include lg{
+                    font-size: 48px;
+                }
+
+                @include sm{
+                    font-size: 38px;
+                }
+            }
+            
+            .boxes{
+                display: flex;
+                justify-content: space-between;
+                @include sm{
+                    display: none;
+                }
+                h1{
+                    font-size: 36px;
+                    @include lg{
+                        font-size: 32px;
+                    }
+    
+    
+                }
+                h2{
+                    font-size: 20px;
+                    font-weight:300;
+                }
+            }
+            
+            
+        }
+        
+    }
+    .imgContainer{
+        flex: 2;
+        background-color: #fcf5f3 ;
+        position: relative;
+        display: flex;
+        align-items: center;
+        
+        
+        @include md{
+            display: none; //we wanna hide the img in md screen
+        }
+
+        img{
+            width: 115%;
+            position: absolute;//to adjust the image relative to the parent content box
+            right: 0;
+
+            @include lg{
+                width: 105%;
+            }
+        }
+    }
+
+}
